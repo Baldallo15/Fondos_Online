@@ -1,5 +1,4 @@
 paths:
   live:
-    runOnInit: ffmpeg -re -stream_loop -1 -i BMW.webm -c copy -f rtsp rtsp://localhost:$RTSP_PORT/live
+    runOnInit: ffmpeg -re -stream_loop -1 -i /BMW.webm -c copy -f rtsp rtsp://localhost:8554/live
     runOnInitRestart: yes
-
