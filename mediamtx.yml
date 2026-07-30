@@ -1,0 +1,4 @@
+paths:
+  live:
+    runOnInit: ffmpeg -re -stream_loop -1 -i "https://raw.githubusercontent.com/Baldallo15/Fondos_Online/main/BMW.webm" -c copy -f rtsp rtsp://localhost:8554/live
+    runOnInitRestart: yes
