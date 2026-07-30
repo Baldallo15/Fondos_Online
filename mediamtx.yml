@@ -1,4 +1,4 @@
 paths:
-  live:
-    runOnInit: ffmpeg -re -stream_loop -1 -i /BMW.webm -c copy -f rtsp rtsp://localhost:8554/live
-    runOnInitRestart: yes
+  all:
+    # Permite publicar con o sin autenticación (puedes agregar credenciales si lo deseas)
+    source: publisher
