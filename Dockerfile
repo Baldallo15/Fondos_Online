@@ -1,17 +1,8 @@
-FROM alpine:latest
+FROM bluenviron/mediamtx:latest-ffmpeg
 
-# Instalar FFmpeg, MediaMTX y dependencias necesarias
-RUN apk add --no-cache ffmpeg curl bash
+COPY mediamtx.yml /mediamtx.yml
+COPY BMW.webm /BMW.webm
 
-# Descargar la última versión de MediaMTX
-RUN curl -L https://github.com/bluenviron/mediamtx/releases/download/v1.6.0/mediamtx_v1.6.0_linux_amd64.tar.gz | tar -xz -C /usr/local/bin/
-
-# Copiar archivos de configuración
-COPY mediamtx.yml /etc/mediamtx.yml
-
-# Puerto RTSP
-EXPOSE 8554
-
-# Comando para iniciar MediaMTX
-CMD ["mediamtx", "/etc/mediamtx.yml"]
+# El comando inicia MediaMTX y luego envía el video en bucle a la ruta /live
+CMD ["sh", "-c", "/mediamtx & sleep 2 && ffmpeg -re -stream_loop -1 -i /BMW.webm -c copy -f rtsp rtsp://localhost:8554/live"]
 
