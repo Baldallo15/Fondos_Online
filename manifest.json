@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "id": "bmw_background",
+      "name": "Fondo Animado BMW",
+      "accessibilityLabel": "BMW Background",
+      "type": "video",
+      "pointsOfInterest": {},
+      "src": {
+        "1080p": "https://raw.githubusercontent.com/Baldallo15/Fondos_Online/main/BMW.webm",
+        "4k": "https://raw.githubusercontent.com/Baldallo15/Fondos_Online/main/BMW.webm"
+      }
+    }
+  ]
+}
+
